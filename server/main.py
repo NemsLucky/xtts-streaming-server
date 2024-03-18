@@ -183,3 +183,13 @@ def get_speakers():
 @app.get("/languages")
 def get_languages():
     return config.languages
+
+
+def get_speakers_2():
+  if hasattr(model, "speaker_manager") and hasattr(model.speaker_manager, "speakers"):
+    for key in model.speaker_manager.speakers.keys():
+      speaker = model.speaker_manager.speakers[key]
+      print(dir(speaker))
+      break
+    
+get_speakers_2()
